@@ -7,6 +7,7 @@
 <title>For PNAX ❤️</title>
 
 <style>
+
 *{
     box-sizing:border-box;
 }
@@ -15,104 +16,235 @@ body{
     margin:0;
     height:100vh;
     overflow:hidden;
-    background:#fff;
+    background:white;
     font-family:"Segoe UI", sans-serif;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+
+/* INTRO */
+
 .intro{
     position:absolute;
-    font-size:25px;
-    color:#777;
-    animation:fadeOut 3s forwards;
+    color:#ff6fa5;
+    font-size:38px;
+    font-weight:600;
+    text-align:center;
+    animation:introHide 2s forwards;
+    animation-delay:2s;
 }
 
-@keyframes fadeOut{
-    0%,60%{opacity:1;}
-    100%{opacity:0;}
+
+@keyframes introHide{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
 }
 
+
+
+/* COUNTDOWN */
+
+.count{
+    position:absolute;
+    font-size:120px;
+    font-weight:bold;
+    color:#ff6fa5;
+    opacity:0;
+}
+
+
+.show3{
+    animation:number 1s forwards;
+}
+
+.show2{
+    animation:number 1s forwards;
+    animation-delay:1s;
+}
+
+.show1{
+    animation:number 1s forwards;
+    animation-delay:2s;
+}
+
+
+@keyframes number{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+
+
+/* CARD */
 
 .card{
+
     text-align:center;
     opacity:0;
-    animation:appear 2s ease forwards;
-    animation-delay:3s;
+    animation:appear 2s forwards;
+    animation-delay:5s;
     position:relative;
+
 }
 
+
 @keyframes appear{
+
     from{
         opacity:0;
         transform:scale(.7);
     }
+
     to{
         opacity:1;
         transform:scale(1);
     }
+
 }
+
 
 
 .photo{
+
     width:320px;
     max-width:80vw;
     border-radius:25px;
+
     box-shadow:
-    0 0 30px rgba(255,120,170,.5);
+    0 0 40px rgba(255,120,170,.5);
+
 }
+
 
 
 .name{
+
     margin-top:20px;
-    font-size:32px;
+    font-size:38px;
     color:#ff5c91;
+    font-weight:bold;
+
 }
+
 
 
 .message{
-    margin-top:15px;
+
+    margin:20px auto;
+    max-width:380px;
     font-size:18px;
     color:#555;
-    max-width:350px;
-    line-height:1.6;
+    line-height:1.7;
+
 }
 
+
+
+/* HEART */
 
 .heart{
+
     position:absolute;
-    font-size:30px;
-    animation:float 3s infinite ease-in-out;
-    filter:drop-shadow(0 0 8px pink);
+    font-size:35px;
+    animation:heartMove 3s infinite ease-in-out;
+
 }
 
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0) rotate(0);
-    }
+
+@keyframes heartMove{
+
     50%{
-        transform:translateY(-25px) rotate(20deg);
+        transform:
+        translateY(-30px)
+        rotate(20deg)
+        scale(1.2);
     }
+
 }
 
+
+
+/* PETALS */
+
+.petal{
+
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation:fall linear infinite;
+
+}
+
+
+@keyframes fall{
+
+    from{
+        transform:
+        translateY(-50px)
+        rotate(0deg);
+        opacity:1;
+    }
+
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:.3;
+
+    }
+
+}
+
+
+
+/* SPARK */
 
 .spark{
+
     position:absolute;
     width:6px;
     height:6px;
     background:#ffd1e1;
     border-radius:50%;
     animation:sparkle 2s infinite;
+
 }
 
 
+
 @keyframes sparkle{
+
     50%{
+
         opacity:.2;
         transform:scale(2);
+
     }
+
 }
 
 
@@ -120,67 +252,132 @@ body{
 
 </head>
 
+
 <body>
 
 
 <div class="intro">
-    Có một điều đặc biệt dành cho bạn...
+
+Chuẩn bị chưa người đẹp của Huỳnh Duy Khang? ❤️
+
 </div>
+
+
+
+<div class="count show3">
+3
+</div>
+
+<div class="count show2">
+2
+</div>
+
+<div class="count show1">
+1
+</div>
+
+
 
 
 <div class="card">
 
-    <img class="photo" src="pnax.jpg">
 
-    <div class="name">
-        PNAX ❤️
-    </div>
+<img class="photo" src="pnax.jpg">
 
 
-    <div class="message">
-        Có thể mình không nói điều này mỗi ngày,
-        nhưng bạn là một người rất đặc biệt với mình.
-        <br><br>
-        Mong rằng nụ cười của bạn sẽ luôn xuất hiện.
-        ❤️
-    </div>
+<div class="name">
+PNAX ❤️
+</div>
 
 
-    <div class="heart" style="top:-40px;left:-50px">
-        ❤️
-    </div>
+<div class="message">
 
-    <div class="heart" style="top:20px;right:-60px;animation-delay:1s">
-        💖
-    </div>
+Xuân Xuân...
 
-    <div class="heart" style="bottom:20px;left:-50px;animation-delay:.5s">
-        💕
-    </div>
+<br><br>
 
-    <div class="heart" style="bottom:-30px;right:-40px;animation-delay:1.5s">
-        ❤️
-    </div>
+Xinh đẹp nhất trên đời này
+
+❤️
 
 </div>
 
 
+
+<div class="heart" style="top:-40px;left:-60px">
+❤️
+</div>
+
+
+<div class="heart" style="top:30px;right:-70px;animation-delay:1s">
+💖
+</div>
+
+
+<div class="heart" style="bottom:10px;left:-50px;animation-delay:.5s">
+💕
+</div>
+
+
+<div class="heart" style="bottom:-30px;right:-50px;animation-delay:1.5s">
+❤️
+</div>
+
+
+
+</div>
+
+
+
+
 <script>
 
-for(let i=0;i<80;i++){
+
+/* tạo hoa đào */
+
+for(let i=0;i<25;i++){
+
+let petal=document.createElement("div");
+
+petal.className="petal";
+
+petal.innerHTML="🌸";
+
+petal.style.left=Math.random()*100+"vw";
+
+petal.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+petal.style.animationDelay=
+Math.random()*5+"s";
+
+
+document.body.appendChild(petal);
+
+}
+
+
+
+/* tạo hạt sáng */
+
+for(let i=0;i<100;i++){
 
 let s=document.createElement("div");
 
 s.className="spark";
 
 s.style.left=Math.random()*100+"vw";
+
 s.style.top=Math.random()*100+"vh";
 
-s.style.animationDelay=Math.random()*2+"s";
+s.style.animationDelay=
+Math.random()*2+"s";
+
 
 document.body.appendChild(s);
 
 }
+
 
 </script>
 
